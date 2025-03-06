@@ -1,3 +1,5 @@
+#this is from when it didn't work, but may be freely modified
+
 class Player:
 	def __init__(self, name, health, damage):
   	self.name = name
