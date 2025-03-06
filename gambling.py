@@ -1,6 +1,8 @@
+#working version
+
 import random
 
-class Enemy:
+class Enemy: #enemy class, not merged with player class to make it flexible. inheritance may be implemented in the future
     def __init__(self, health, name, damage):
         self.health = health
         self.name = name
@@ -9,7 +11,7 @@ class Enemy:
     def TakeDamage(self, dmg):
         self.health -= dmg
         
-class Player:
+class Player: #read enemy class comments but vice versa
     def __init__(self, health, damage, name):
         self.health = health
         self.damage = damage
