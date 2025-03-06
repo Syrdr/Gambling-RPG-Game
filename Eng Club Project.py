@@ -1,4 +1,4 @@
-#this is from when it didn't work, but may be freely modified
+#this is from when it didn't work, but may be freely modified. check gambling.py for full version
 
 class Player:
 	def __init__(self, name, health, damage):
