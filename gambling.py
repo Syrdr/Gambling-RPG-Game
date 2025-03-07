@@ -68,7 +68,7 @@ while i < 4:
     # Ask if the player wants to keep going only after a battle is over
     if isBattleDone:
         currentreward = i * 2 + 2
-        keepgoing = input(f"Do you want to keep going? You can add $2 to your existing ${currentreward} reward with a net profit of ${currentreward - 5}! Losing will drop your prize money to zero (y to continue, anything else to stop):\n ")
+        keepgoing = input(f"Do you want to keep going? You can add $2 to your existing ${currentreward} reward with an existing net profit of ${currentreward - 5}! Losing will drop your prize money to zero (y to continue, anything else to stop):\n ")
         if keepgoing.lower() != "y":
             print(f"You chose to stop! Ending this battle. Total prize is {currentreward}")
             break  # Exit the main loop if the player decides to stop the game
