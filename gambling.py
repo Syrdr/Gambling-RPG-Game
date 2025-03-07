@@ -1,7 +1,7 @@
 #working version
 
 import random
-
+print("$5 bet registered...")
 class Enemy: #enemy class, not merged with player class to make it flexible. inheritance may be implemented in the future
     def __init__(self, health, name, damage):
         self.health = health
@@ -30,8 +30,8 @@ playerinstance = Player(100, 10, playername)
 
 while i < 4:
     playerhealth = 100 + i * 4  # Update player health based on battle round
-    playerinstance.damage = 10 + i  # Update player damage based on battle round
-    currentmonster = Enemy(i * 10 + 100, monsters[i], 10 + i)
+    playerinstance.damage = 10 + 2 * i  # Update player damage based on battle round
+    currentmonster = Enemy(i * 10 + 100, monsters[i], 10 * i)
     print(f"\n{playername} is currently fighting monster {monsters[i]}")
     isBattleDone = False
 
@@ -68,7 +68,7 @@ while i < 4:
     # Ask if the player wants to keep going only after a battle is over
     if isBattleDone:
         currentreward = i * 2 + 2
-        keepgoing = input(f"Do you want to keep going? You can add $2 to your existing ${currentreward} reward! Losing will drop your prize money to zero (y to continue, anything else to stop):\n ")
+        keepgoing = input(f"Do you want to keep going? You can add $2 to your existing ${currentreward} reward with a net profit of ${currentreward - 5}! Losing will drop your prize money to zero (y to continue, anything else to stop):\n ")
         if keepgoing.lower() != "y":
             print(f"You chose to stop! Ending this battle. Total prize is {currentreward}")
             break  # Exit the main loop if the player decides to stop the game
@@ -77,6 +77,6 @@ while i < 4:
 
 # Final reward based on the number of battles won
 if playerwon:
-    print(f"\nYou win ${currentreward}!")
+    print(f"\nYou win ${currentreward}! Net profit: ${currentreward - 5}")
 else:
-    print(f"\nYou won {i} battles but still lost your last one! You win nothing!")
+    print(f"\nYou won {i} battles but still lost your last one! You lost $5!")
